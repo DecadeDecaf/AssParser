@@ -1,6 +1,6 @@
 {
   "$GMProject":"v1",
-  "%Name":"AssParser",
+  "%Name":"AssParser Library",
   "AudioGroups":[
     {"$GMAudioGroup":"v1","%Name":"audiogroup_default","exportDir":"","name":"audiogroup_default","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
   ],
@@ -22,12 +22,12 @@
   "MetaData":{
     "IDEVersion":"2024.14.1.210",
   },
-  "name":"AssParser",
+  "name":"AssParser Library",
   "resources":[
-    {"id":{"name":"AssParser","path":"extensions/AssParser/AssParser.yy",},},
     {"id":{"name":"fnt_arial","path":"fonts/fnt_arial/fnt_arial.yy",},},
     {"id":{"name":"obj_example","path":"objects/obj_example/obj_example.yy",},},
     {"id":{"name":"rm_example","path":"rooms/rm_example/rm_example.yy",},},
+    {"id":{"name":"AssParser","path":"scripts/AssParser/AssParser.yy",},},
   ],
   "resourceType":"GMProject",
   "resourceVersion":"2.0",

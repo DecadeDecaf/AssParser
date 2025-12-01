@@ -1,12 +1,13 @@
-#define ass_parser_init
+function ass_parser_init() {
 	global.sub_path = "";
 	global.format_args = [];
 	
-	return;
+	#macro start_time_arg "Start"
+	#macro end_time_arg "End"
+	#macro sub_text_arg "Text"
+}
 
-#define timestamp_to_ms
-	var _timestamp = argument0;
-	
+function timestamp_to_ms(_timestamp) {
 	var _timer_hands = string_split(_timestamp, ":");
 	var _timer_hand_hour = real(_timer_hands[@ 0]);
 	var _timer_hand_minute = real(_timer_hands[@ 1]);
@@ -18,11 +19,9 @@
 	_time_in_ms += (_timer_hand_second * 1000);
 	
 	return _time_in_ms;
+}
 
-#define video_open_ext
-	var _video = argument[0];
-	var _sub = (argument_count > 1 ? argument[1] : "");
-	
+function video_open_ext(_video, _sub = "") {
 	video_open(_video);
 	
 	if (_sub == "") {
@@ -30,10 +29,9 @@
 	}
 	
 	global.sub_path = _sub;
-	
-	return;
+}
 
-#define get_subtitle_data
+function get_subtitle_data() {
 	var _filename = global.sub_path;
 	var _file = file_text_open_read(_filename);
 	
@@ -76,8 +74,9 @@
 	file_text_close(_file);
 	
 	return _parsed_ass;
+}
 
-#define get_subtitle
+function get_subtitle() {
 	var _subs = get_subtitle_data();
 	var _status = video_get_status();
 
@@ -95,10 +94,9 @@
 	}
 	
 	return {};
+}
 
-#define get_subtitle_info
-	var _key = argument0;
-
+function get_subtitle_info(_key) {
 	var _sub = get_subtitle();
 	
 	if (struct_exists(_sub, _key)) {
@@ -106,6 +104,8 @@
 	}
 	
 	return "";
+}
 
-#define get_subtitle_text
+function get_subtitle_text() {
 	return get_subtitle_info(sub_text_arg);
+}

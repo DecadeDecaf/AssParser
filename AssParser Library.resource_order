@@ -1,0 +1,10 @@
+{
+  "FolderOrderSettings":[
+    {"name":"Example","order":6,"path":"folders/Example.yy",},
+  ],
+  "ResourceOrderSettings":[
+    {"name":"obj_example","order":1,"path":"objects/obj_example/obj_example.yy",},
+    {"name":"rm_example","order":2,"path":"rooms/rm_example/rm_example.yy",},
+    {"name":"AssParser","order":7,"path":"scripts/AssParser/AssParser.yy",},
+  ],
+}

@@ -1,3 +1,6 @@
+/// @description This function is required for AssParser to work.
+/// @returns {undefined}
+
 function ass_parser_init() {
 	global.sub_path = "";
 	global.format_args = [];
@@ -20,6 +23,11 @@ function timestamp_to_ms(_timestamp) {
 	
 	return _time_in_ms;
 }
+
+/// @description This function opens a video file and subtitle file using the paths specified.
+/// @param {string} video_path Path to the video file.
+/// @param {string} [subtitle_path]="" Path to the subtitle file (optional: if no argument is given, it will find an .ass file with the same file name as the video file).
+/// @returns {undefined}
 
 function video_open_ext(_video, _sub = "") {
 	video_open(_video);
@@ -96,6 +104,10 @@ function get_subtitle() {
 	return {};
 }
 
+/// @description This function lets you retrieve information about the current line of dialogue.  Returns a string containing the value of the given key.
+/// @param {string} key The name of the key, as written in the .ass file's "Format: " line.
+/// @returns {string}
+
 function get_subtitle_info(_key) {
 	var _sub = get_subtitle();
 	
@@ -105,6 +117,9 @@ function get_subtitle_info(_key) {
 	
 	return "";
 }
+
+/// @description This function lets you retrieve the text of the current line of dialogue, it is identical to using get_subtitle_info("Text"). Returns a string containing the current line of dialogue (or an empty string, if there is no dialogue playing).
+/// @returns {string}
 
 function get_subtitle_text() {
 	return get_subtitle_info(sub_text_arg);
